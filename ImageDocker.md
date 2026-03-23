@@ -34,5 +34,6 @@ After the images are pushed, another machine can pull and run them directly with
 
 Notes:
 - Replace `C:\pcaps` with the real host path that contains your `.pcap`, `.pcapng`, or `.cap` files.
+- Please put your pcap files in the pcap directory (Ex: C:\pcaps)
 - If users access the frontend from another machine on the network, set `BE_PUBLIC_URL` to the Docker host IP, for example `http://192.168.1.20:7000`.
 - If a container name is already in use on the target machine, either remove the old container or choose a different `--name`.
