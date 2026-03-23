@@ -86,7 +86,7 @@ async function loadPcapStats() {
     if (!statsDiv) return;
 
     try {
-        const { data } = await axios.get("http://localhost:7000/pcaps/count");
+        const { data } = await axios.get(SERVER + API_PATH.PCAP_COUNT_PATH);
 
         statsDiv.innerHTML =
             `<strong>Pcaps folder:</strong> ${data.pcap_files} Valid Files | ${data.other_files} Other Files | ${data.total_files} Total Files`;
@@ -99,7 +99,7 @@ async function loadPcapStats() {
 
 async function loadScanMode() {
     try {
-        const res = await axios.get('/config');
+        const res = await axios.get(SERVER + API_PATH.SCAN_CONFIG_PATH);
         const scanMode = res.data.pcap.scan_mode;
 
         const el = document.getElementById('scanModeInfo');
